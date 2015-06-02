@@ -1,1 +1,2 @@
-# FinalProject
+The app is designed to hit Facebook API and use user posts to analyze possible talents and potentials of an individual. Watson API might be one way of doing so. 
+This project is a work in progress, and at this point specs might change dramatically.
