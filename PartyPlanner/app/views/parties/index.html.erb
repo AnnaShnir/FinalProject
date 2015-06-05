@@ -1,0 +1,14 @@
+<% @parties.each do |party| %>
+	<span class="parties-list">
+		<div class="container-fluid" "image"><%= link_to party.image_url %>
+		</div>
+		<div class="type_of_party"><%= link_to party.location %>
+			<br/>
+			<%= link_to party.type_of_party %>
+			<br/>
+			<%= link_to party.location %>
+		</div>
+
+	</span>
+
+<% end %>

@@ -1,0 +1,63 @@
+<div class="user-box">
+  <h4> Have An Account? Login</h4>
+
+  <p style="color: red"><%= flash[:error] %></p>
+
+  <form action="/session" method="POST" class="pure-form pure-form-aligned">
+    <fieldset>
+      <div class="pure-control-group">
+        <label for="username">Username:</label>
+        <input name="username">
+      </div>
+      <div class="pure-control-group">
+        <label for = "password">Password:</label>
+        <input name="password" type="password"><br>
+      </div>
+      <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
+      <div class="pure-controls">
+        <button class="pure-button pure-button-primary">Log In</button>
+      </div>
+    </fieldset>
+  </form>
+
+  <h4>Sign Up Now!!!</h4>
+
+  <%= form_for(@user, html: {class: 'pure-form pure-form-aligned user_form'}) do |f| %>
+
+  <% if @user.errors.any? %>
+    <div id="error-explanation">
+      <p><%= pluralize(@user.errors.count, "error")%> prohibited this user from being saved:</p>
+      <ul>
+      <% @user.errors.full_messages.each do |message| %>
+      <li style="color: red"><%= message %></li>
+      <% end %>
+    </ul>
+    </div>
+    <% end %>
+
+
+
+  <div class="pure-control-group">
+    <label>Name</label>
+    <%= f.text_field :name, placeholder: 'Name' %>
+  </div>
+
+  <div class="pure-control-group">
+    <%= f.label :email %>
+    <%= f.text_field :email, placeholder: 'Email' %>
+  </div>
+
+  <div class="pure-control-group">
+    <%= f.label :password %>
+    <%= f.password_field :password, placeholder: 'Password' %>
+  </div>
+
+   <div class="pure-control-group">
+    <%= f.label :password_confirmation, 'Confirmation' %>
+    <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation' %>
+  </div>
+
+  <div class="pure-controls">
+    <%= f.submit class: 'pure-button pure-button-primary' %>
+  </div>
+  <% end %>

@@ -36,6 +36,7 @@ class PartiesController < ApplicationController
 	end
 
 	private
+	
 	def party_params
 		params.require(:party).permit(:location, :description, :type_of_activity, :image_url)
 	end
