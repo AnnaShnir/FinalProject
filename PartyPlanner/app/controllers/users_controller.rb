@@ -2,8 +2,10 @@ class UsersController < ApplicationController
 	before_action :authenticate, except: [:new, :create]
 
 	def show
-		@user = User.find(params[:id])
+
+		@user = User.find(session[:user_id])
 	end
+	
 	def create
 		@user = User.create(user_params)
 		if @user.save
@@ -18,6 +20,6 @@ class UsersController < ApplicationController
 private
 
 	def user_params
-		params.require(:user).permit(:name, :email, :calendar_entry)
+		params.require(:user).permit(:name, :email, :password, :calendar_entry)
 	end
 end

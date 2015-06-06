@@ -13,7 +13,7 @@
 <%= form_for(@party, html: {class: 'pure-form'}) do |f| %>
 
 	<%= f.text_field :image_url, placeholder: "Picture of your party theme or location" %>
-	<%= f.select :type_of_activity, options_for_select :Party.all.by_type_of_activity %>
+	
 	<%= f.text_field :location %>
 	<%= f.text_field :description, placeholder: "Description" %>
 

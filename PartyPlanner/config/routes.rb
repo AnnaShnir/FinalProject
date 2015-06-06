@@ -6,6 +6,22 @@ Rails.application.routes.draw do
 
   # You can have the root of your site routed with "root"
   root 'welcome#index'
+  resources :parties
+
+  get "/login" => "sessions#new"
+  resource :session, only: [:create, :destroy]
+  resource :users
+
+  get "/user/:id" => 'user#view'
+  resource :user, only: [:show, :destroy]
+
+  # get "party/:id" => 'party#view'
+  # resource :party, only: [:create, :destroy, :new]
+  # resource :users
+
+  # get "party/new" => "party#new"
+  # resource :party, only: [:create, :destroy, :show]
+
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'

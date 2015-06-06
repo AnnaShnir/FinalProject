@@ -1,12 +1,19 @@
 <% @parties.each do |party| %>
 	<span class="parties-list">
-		<div class="container-fluid" "image"><%= link_to party.image_url %>
+		<div class="container-fluid" "image">
+		<a href="parties/<%= party.id %>">
+			<img src="<%= party.image_url %>">
+		</a>
+		
 		</div>
-		<div class="type_of_party"><%= link_to party.location %>
+		<div class="type_of_party"><%= party.type_of_activity %>
 			<br/>
-			<%= link_to party.type_of_party %>
+			<%= party.description %>
 			<br/>
-			<%= link_to party.location %>
+			<%= party.location %>
+			<br/>
+			<br/>
+
 		</div>
 
 	</span>

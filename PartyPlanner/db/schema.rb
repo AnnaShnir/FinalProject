@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150604143753) do
+ActiveRecord::Schema.define(version: 20150605194700) do
 
   create_table "parties", force: :cascade do |t|
     t.string   "type_of_activity"
@@ -32,8 +32,9 @@ ActiveRecord::Schema.define(version: 20150604143753) do
     t.string   "name"
     t.string   "email"
     t.string   "calendar_entry"
-    t.datetime "created_at",     null: false
-    t.datetime "updated_at",     null: false
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.string   "password_digest"
   end
 
 end

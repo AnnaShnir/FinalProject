@@ -1,3 +1,42 @@
 // Place all the styles related to the Sessions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$font: PT Sans Narrow, sans-serif;
+$primary-color: #34495e;
+$secondary-color: #BF9F3F;
+$tertiary-color: #20788C;
+
+.user-box {
+  border: 1px solid black;
+  width: 3/7 * 100%;
+  margin: 5% auto;
+  padding: 20px;
+}
+
+form {
+  .pure-button-primary.pure-button{
+    background-color: $primary_color;
+    border-radius: 5px;
+  }
+}
+
+h4 {
+  text-align: center;
+  color: $secondary-color;
+}
+
+body {
+  background-color: azure;
+  background-image: url(../images/flag.jpg);
+   
+}
+
+
+
+
+
+
+
+

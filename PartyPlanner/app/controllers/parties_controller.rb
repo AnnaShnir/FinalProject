@@ -1,7 +1,7 @@
 class PartiesController < ApplicationController
 
 	def index
-		@parties = Parties.all
+		@parties = Party.order(created_at: :desc)
 	end
 
 	def show
@@ -19,7 +19,8 @@ class PartiesController < ApplicationController
 	def create
 		@party = Party.create(party_params)
 		if @party.save
-			redirect_to(parties_path)
+			redirect_to(parties_path({:id => @party.id}) )
+			#redirect_to :controller => "parties_controller", :action => "show", :id => @party.id
 		else
 			render :new
 		end
@@ -36,7 +37,7 @@ class PartiesController < ApplicationController
 	end
 
 	private
-	
+
 	def party_params
 		params.require(:party).permit(:location, :description, :type_of_activity, :image_url)
 	end
