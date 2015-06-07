@@ -18,6 +18,8 @@ class PartiesController < ApplicationController
 
 	def create
 		@party = Party.create(party_params)
+
+		@party.organizer = User.find(session[:user_id])
 		if @party.save
 			redirect_to(parties_path({:id => @party.id}) )
 			#redirect_to :controller => "parties_controller", :action => "show", :id => @party.id
@@ -29,6 +31,8 @@ class PartiesController < ApplicationController
 	def update
 		Party.find(params[:id]).update(party_params)
 		redirect_to(parties_path)
+		if @party.update
+			User.find(session[:user_id])
 	end
 
 	def destroy
@@ -39,7 +43,13 @@ class PartiesController < ApplicationController
 	private
 
 	def party_params
-		params.require(:party).permit(:location, :description, :type_of_activity, :image_url)
+		params.require(:party).permit(:location, :description, :type_of_activity, :image_url, :)
 	end
 
 end
+
+
+
+
+
+

@@ -1,0 +1,19 @@
+<% if @party.errors.any? %>
+	<div id="pure-form pure-form-aligned user_form">
+		<p><%= pluralize(@party.errors.count, "error") %> prohibited this user from being saved: </p>
+		<ul>
+			<% @party.errors.full_messages.each do |message| %>
+			<li style="color: red"><%= message %></li>
+			<% end %>
+		</ul>
+
+	</div>
+<% end %>
+
+
+
+<%= form_for(@party, html: {class: 'pure-form'}) do |f| %>
+
+	<%= f.submit "I Vow to party hard at this event" %>
+
+<% end %>

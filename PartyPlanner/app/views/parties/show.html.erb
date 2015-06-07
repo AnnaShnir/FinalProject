@@ -3,3 +3,10 @@
 <li><%= @party.type_of_activity %></li>
 <li><%= @party.location %></li>
 <li><%= @party.description %></li>
+<li><%= @party.organizer.name %></li>
+<li><%= @party.attendees.name %></li>
+
+<h3>Join the crowd</h3>
+<%= render 'attendee_form' %>
+
+
