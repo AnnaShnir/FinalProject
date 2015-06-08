@@ -1,6 +1,8 @@
 <% @parties.each do |party| %>
 	<span class="parties-list">
 		<div class="container-fluid" "image">
+		<!-- add to the above div class - col=md 
+		, wrapping span should be given sizing constrains-->
 		<a href="parties/<%= party.id %>">
 			<img src="<%= party.image_url %>">
 		</a>

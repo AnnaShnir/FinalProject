@@ -1,10 +1,29 @@
+  <head>
+    <meta name="google-signin-scope" content="profile email">
+  <meta name="google-signin-client_id" content="161396444682-7u5aos57ttth10n7p97kdjcjf4canpoh.apps.googleusercontent.com">
+
+    </head>
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <div class="user-box">
 
   <h4>Sign Up Now!!!</h4>
 
  <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+<div id="gSignInWrapper">
+  <div id="myButton" class="classesToStyleWith">
+    Sign in with Google
+  </div>
+
     <script>
+      function render() {
+
+    // Additional params
+    var additionalParams = {
+      'theme' : 'dark'
+    };
+
+    gapi.signin.render('myButton', additionalParams);
+  }
       function onSignIn(googleUser) {
         // Useful data for your client-side scripts:
         var profile = googleUser.getBasicProfile();
@@ -50,6 +69,8 @@
     <%= f.label :email %>
     <%= f.text_field :email, placeholder: 'Email' %>
   </div>
+</div>
+
 </div>
 
 

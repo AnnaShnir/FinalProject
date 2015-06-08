@@ -1,3 +1,4 @@
+
 <% if @party.errors.any? %>
 	<div id="pure-form pure-form-aligned user_form">
 		<p><%= pluralize(@party.errors.count, "error") %> prohibited this user from being saved: </p>
@@ -16,7 +17,7 @@
 
 <%= hidden_field_tag(:id, @party.id) %>
 
-	<%= f.submit id="goToParty" "I Vow to party hard at this event" %>
+	<%= f.submit id="goToParty" %>
 
 <script>
 function AddToMyGoogleCalendar() {

@@ -1,19 +1,29 @@
 
-<li><img src="<%= @party.image_url %>"></li>
-<li><%= @party.type_of_activity %></li>
+<div class="party-container"><div class="col-md-4">
+<img src="<%= @party.image_url %>">
+</div>
+<!-- <li><%= @party.type_of_activity %></li> -->
+<h3>Location of the Party:</h3>
 <li><%= @party.location %></li>
+<br/>
+<h3>Party Vibe:</h3>
 <li><%= @party.description %></li>
+<br/>
+<h3>Organizer:</h3>
 <li><%= @party.organizer.name %></li>
+<br/>
 <h3>Attendees:</h3>
 <p><% @party.attendees.each do |attendee| %>
   <%= attendee.name %>, 
  <% end %>
   etc...
  </p>
+  <br/>
 
 
 
-<h3>Join the crowd</h3>
+<h3>Join the crowd:</h3>
 <%= render 'attendee_form' %>
+</div>
 
 
