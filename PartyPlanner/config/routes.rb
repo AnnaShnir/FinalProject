@@ -15,6 +15,14 @@ Rails.application.routes.draw do
   get "/user/:id" => 'user#view'
   resource :user, only: [:show, :destroy]
 
+  resource :parties do 
+    member do
+      post 'attend'
+    end
+  end
+
+    
+
   # get "party/:id" => 'party#view'
   # resource :party, only: [:create, :destroy, :new]
   # resource :users

@@ -4,7 +4,14 @@
 <li><%= @party.location %></li>
 <li><%= @party.description %></li>
 <li><%= @party.organizer.name %></li>
-<li><%= @party.attendees.name %></li>
+<h3>Attendees:</h3>
+<p><% @party.attendees.each do |attendee| %>
+  <%= attendee.name %>, 
+ <% end %>
+  etc...
+ </p>
+
+
 
 <h3>Join the crowd</h3>
 <%= render 'attendee_form' %>

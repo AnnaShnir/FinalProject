@@ -1,26 +1,29 @@
+<script src="https://apis.google.com/js/platform.js" async defer></script>
 <div class="user-box">
-  <h4> Have An Account? Login</h4>
-
-  <p style="color: red"><%= flash[:error] %></p>
-
-  <form action="/session" method="POST" class="pure-form pure-form-aligned">
-    <fieldset>
-      <div class="pure-control-group">
-        <label for="username">Username:</label>
-        <input name="username">
-      </div>
-      <div class="pure-control-group">
-        <label for = "password">Password:</label>
-        <input name="password" type="password"><br>
-      </div>
-      <input name="authenticity_token" value="<%= form_authenticity_token() %>" type="hidden">
-      <div class="pure-controls">
-        <button class="pure-button pure-button-primary">Log In</button>
-      </div>
-    </fieldset>
-  </form>
 
   <h4>Sign Up Now!!!</h4>
+
+ <div class="g-signin2" data-onsuccess="onSignIn" data-theme="dark"></div>
+    <script>
+      function onSignIn(googleUser) {
+        // Useful data for your client-side scripts:
+        var profile = googleUser.getBasicProfile();
+
+        document.getElementById('user_name').value = profile.getName();
+        document.getElementById('user_email').value = profile.getEmail();
+
+        document.getElementById('new_user').submit();
+
+        console.log("ID: " + profile.getId()); // Don't send this directly to your server!
+        console.log("Name: " + profile.getName());
+        console.log("Image URL: " + profile.getImageUrl());
+        console.log("Email: " + profile.getEmail());
+
+        // The ID token you need to pass to your backend:
+        var id_token = googleUser.getAuthResponse().id_token;
+        console.log("ID Token: " + id_token);
+      };
+    </script>
 
   <%= form_for(@user, html: {class: 'pure-form pure-form-aligned user_form'}) do |f| %>
 
@@ -36,6 +39,7 @@
     <% end %>
 
 
+<div style="display: none;">
 
   <div class="pure-control-group">
     <label>Name</label>
@@ -46,18 +50,8 @@
     <%= f.label :email %>
     <%= f.text_field :email, placeholder: 'Email' %>
   </div>
+</div>
 
-  <div class="pure-control-group">
-    <%= f.label :password %>
-    <%= f.password_field :password, placeholder: 'Password' %>
-  </div>
 
-   <div class="pure-control-group">
-    <%= f.label :password_confirmation, 'Confirmation' %>
-    <%= f.password_field :password_confirmation, placeholder: 'Password Confirmation' %>
-  </div>
 
-  <div class="pure-controls">
-    <%= f.submit class: 'pure-button pure-button-primary' %>
-  </div>
   <% end %>

@@ -7,12 +7,20 @@ class UsersController < ApplicationController
 	end
 	
 	def create
-		@user = User.create(user_params)
-		if @user.save
+		@user = User.find_by(email: params[:email])
+
+		if @user
 			session[:user_id] = @user.id
 			redirect_to user_path(@user)
 		else
-			render template: "sessions/new"
+
+			@user = User.create(user_params)
+			if @user.save
+				session[:user_id] = @user.id
+				redirect_to user_path(@user)
+			else
+				render template: "sessions/new"
+			end
 		end
 	end
 
@@ -20,6 +28,6 @@ class UsersController < ApplicationController
 private
 
 	def user_params
-		params.require(:user).permit(:name, :email, :password, :calendar_entry)
+		params.require(:user).permit(:name, :email, :calendar_entry)
 	end
 end

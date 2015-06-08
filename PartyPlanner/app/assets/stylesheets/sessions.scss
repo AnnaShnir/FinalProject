@@ -15,6 +15,8 @@ $tertiary-color: #20788C;
   padding: 20px;
 }
 
+
+
 form {
   .pure-button-primary.pure-button{
     background-color: $primary_color;
@@ -29,7 +31,7 @@ h4 {
 
 body {
   background-color: azure;
-  background-image: url(../images/flag.jpg);
+  background-image: url('../images/flag.jpg');
    
 }
 

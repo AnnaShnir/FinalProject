@@ -28,11 +28,18 @@ class PartiesController < ApplicationController
 		end
 	end
 
+	def attend
+		@party = Party.find(params[:id])
+		@attender = User.find(session[:user_id])
+		@party.attendees << @attender 
+		#@party.update
+		redirect_to(parties_path)
+	end
+		
+
 	def update
 		Party.find(params[:id]).update(party_params)
 		redirect_to(parties_path)
-		if @party.update
-			User.find(session[:user_id])
 	end
 
 	def destroy
@@ -43,7 +50,7 @@ class PartiesController < ApplicationController
 	private
 
 	def party_params
-		params.require(:party).permit(:location, :description, :type_of_activity, :image_url, :)
+		params.require(:party).permit(:location, :description, :type_of_activity, :image_url)
 	end
 
 end
