@@ -2,3 +2,19 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+#im {
+  max-width: 230%;
+
+}
+
+.pure-g > [class*="pure-u"] {
+-webkit-box-sizing: border-box;
+-moz-box-sizing: border-box;
+box-sizing: border-box;
+padding: 0 20px;
+}
+img{
+max-width: 100%;
+height: auto;
+display: block;
+}
