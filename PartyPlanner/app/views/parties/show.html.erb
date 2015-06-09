@@ -6,21 +6,21 @@
 
 <!-- <li><%= @party.type_of_activity %></li> -->
 <div class="pure-u-1-2">
-<h3>Location of the Party:</h3>
-<li><%= @party.location %></li>
+<h2>Location of the Party:</h2>
+<h4><%= @party.location %></h4>
 <br/>
-<h3>Party Vibe:</h3>
-<li><%= @party.description %></li>
+<h2>Party Vibe:</h2>
+<h4><%= @party.description %></h4>
 <br/>
-<h3>Organizer:</h3>
-<li><%= @party.organizer.name %></li>
+<h2>Organizer:</h2>
+<h4><%= @party.organizer.name %></h4>
 <br/>
-<h3>Attendees:</h3>
-<p><% @party.attendees.each do |attendee| %>
+<h2>Attendees:</h2>
+<h4><% @party.attendees.each do |attendee| %>
   <%= attendee.name %>, 
  <% end %>
   etc...
- </p>
+ </h4>
   <br/>
   </div>
 </div>

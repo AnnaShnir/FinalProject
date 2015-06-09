@@ -10,6 +10,7 @@
   
   <meta name="google-signin-scope" content="profile email">
   <meta name="google-signin-client_id" content="161396444682-7u5aos57ttth10n7p97kdjcjf4canpoh.apps.googleusercontent.com">
+
   <script src="https://apis.google.com/js/platform.js" async defer></script>
 </head>
 <body>
@@ -28,21 +29,6 @@
       <div class="new-party">
         <li><%= link_to "Organize a Party", new_party_path, class: 'new' %></li>
         <li><%= link_to "Logout", session_path, method: :delete %></li>
-        <a href="#" onclick="signOut();">Sign out</a>
-<script>
-  function signOut() {
-    var auth2 = gapi.auth2.getAuthInstance();
-    auth2.signOut().then(function () {
-      console.log('User signed out.');
-    });
-  }
-      function onLoad() {
-      gapi.load('auth2', function() {
-        gapi.auth2.init();
-      });
-    }
-
-</script>
         <% end %>
       </div>
     </div>

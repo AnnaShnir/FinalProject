@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   resources :parties
 
   get "/login" => "sessions#new"
+  get "/bye" => "sessions#destroy"
   resource :session, only: [:create, :destroy]
   resource :users
 
@@ -20,6 +21,8 @@ Rails.application.routes.draw do
       post 'attend'
     end
   end
+
+  #resource :session do
 
     
 

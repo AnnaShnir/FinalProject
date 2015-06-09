@@ -2,10 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-#im {
-  max-width: 230%;
 
-}
 
 .pure-g > [class*="pure-u"] {
 -webkit-box-sizing: border-box;
@@ -13,8 +10,40 @@
 box-sizing: border-box;
 padding: 0 20px;
 }
+
 img{
-max-width: 100%;
+max-width: 70%;
 height: auto;
 display: block;
 }
+
+h2 {
+	font-size: 20px;
+	background:rgba(255,255,255, 0.3);
+	text-align: center;
+
+}
+
+h4 {
+	font-size: 18px;
+	background:rgba(255,255,255, 0.5);
+	text-align: center;
+
+}
+
+h1 {
+	font-size: 18px;
+	background:rgba(255,255,255, 0.2);
+	text-align: center;
+
+}
+
+
+
+
+
+
+
+
+
+

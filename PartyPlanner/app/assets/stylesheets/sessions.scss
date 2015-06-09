@@ -13,9 +13,11 @@ $tertiary-color: #20788C;
   width: 3/7 * 100%;
   margin: 5% auto;
   padding: 20px;
+  text-align: left;
+  color: $primary-color;
+  font-size: 26px;
+  font-style: bold;
 }
-
-
 
 
 
@@ -27,17 +29,20 @@ form {
   }
 }
 
-h4 {
+/*h4 {
   text-align: center;
   color: $secondary-color;
-}
+}*/
 
 body {
   padding: 40px;
   background-color: azure;
-  background-image: url('../images/flag.jpg');
+   background-image: url("https://s-media-cache-ak0.pinimg.com/736x/6c/34/28/6c3428bceaed011683fc767a3023f888.jpg");
+   background-size: cover;
    
 }
+
+
 
 
 
