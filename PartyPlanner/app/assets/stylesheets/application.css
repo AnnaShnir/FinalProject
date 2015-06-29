@@ -14,3 +14,6 @@
  *= require_self
  */
 
+.pure-menu-item {
+	padding: 30px;
+}
