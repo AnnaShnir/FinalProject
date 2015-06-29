@@ -14,6 +14,16 @@
  *= require_self
  */
 
+.pure-menu-horizontal {
+	padding: 10px;
+	font-size: 20px;
+	text-align: center;
+}
 .pure-menu-item {
 	padding: 30px;
 }
+
+#thelink {
+	margin: 30px;
+}
+

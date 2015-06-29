@@ -26,7 +26,7 @@
           <% else %>
           <li class="pure-menu-item"><%= link_to "Home", login_path %></li>
           <% end %>
-          <li class="pure-menu-item"><%= link_to "Parties", parties_path %></li>
+          <li class="pure-menu-item" id="thelink"><%= link_to "Parties", parties_path %></li>
       </div>
         <% if session[:user_id] %>
       <div class="new-party">
