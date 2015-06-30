@@ -27,11 +27,13 @@
           <li class="pure-menu-item"><%= link_to "Home", login_path %></li>
           <% end %>
           <li class="pure-menu-item" id="thelink"><%= link_to "Parties", parties_path %></li>
+        </ul>
       </div>
         <% if session[:user_id] %>
-      <div class="new-party">
-        <li><%= link_to "Organize a Party", new_party_path, class: 'new' %></li>
-        <li><%= link_to "Logout", session_path, method: :delete %></li>
+      <div class="new-party" "pure-menu pure-menu-horizontal">
+        <ul class="pure-menu-list">
+          <li class="pure-menu-item"><%= link_to "Organize a Party", new_party_path, class: 'new' %></li>
+          <li class="pure-menu-item"><%= link_to "Logout", session_path, method: :delete %></li>
         <% end %>
         </ul>
       </div>
